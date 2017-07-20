@@ -25,11 +25,20 @@ def naked_twins(values):
     """
     for unit in unitlist:
         
+        # Find the naked twin box
+        for unitBox in unit:
+            matchingBoxes = [targetUnitBox for targetUnitBox in unit if values[unitBox] == values[targetUnitBox]
+            
+            if len(matchingBoxes) > 1:
+                #Found naked twin
+                nakedTwinValue = values[unitBox]
+
+
         for digit in '123456789':
             dplaces = [box for box in unit if digit in values[box]]
             if len(dplaces) == 1 and len(values[dplaces[0]]) > 1:
                 #values[dplaces[0]] = digit
-                assign_value(values,dplaces[0],digit)
+                assign_value(values, dplaces[0], digit)
     return values
 
 
@@ -39,18 +48,18 @@ def naked_twins(values):
 
 def cross(A, B):
     return [s+t for s in A for t in B]
-    
-def diag(A, B):
-    result = []    
-    for index in range(len(A)):
-        result.append(A[index]+B[index])    
+
+def diag(a, b):
+    result = []
+    for index in range(len(a)):
+        result.append(a[index]+b[index])
     return result
 
 def diagReverse(A, B):
-    result = []    
+    result = []
     counter = 0
-    for index in range(len(A)-1,-1,-1):
-        result.append(A[index]+B[counter])    
+    for index in range(len(A)-1, -1, -1):
+        result.append(A[index]+B[counter])
         counter += 1
     return result
 
