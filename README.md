@@ -7,7 +7,8 @@ A: *Student should provide answer here*
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: We added 2 new diagonal units with the constraint that the diagonals cannot have repeating digits.
+
 
 ### Install
 
