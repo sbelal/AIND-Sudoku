@@ -9,6 +9,9 @@ A: We identify duplicate values with lenght of 2 in boxes within each and every 
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
 A: We use a combination elimination, naked twin and only choice strategies to enforce constraints in each box in the board.  These strategies allow us to reduce the number of digits that are possible in each box often leaving just 1 value, thus solving that box.  Constraint propagation applies the strategies mentioned earlier repeatedly (multiple passes) till we observe that there is no progress or has stalled.  With each pass the contraints are enforced and digits that violate some constraint are removed.  This leads to eventually solving the entire board or leads to a board with much fewer possibilities for the search algorithm to solve.
 
+To solve the diagonal sudoku I have extended the existing regular sudoku solving functions provided in the lessons by adding two new units, left and right diagonal.  These two new units have the same constraints as the other units, such as grid or column units, where the diagonal units cannot have any box with a digit that is used by another box in the unit.  The global variables "peers", "units" and "unitlist" were updated to include the two new units.  Adding these 2 new units have the added benefit of solving the board faster since constraint propagation is more likely to eliminate possibilities since there are more contraints to apply.
+
+
 
 ### Install
 

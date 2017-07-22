@@ -1,5 +1,5 @@
 .DS_Store
 __pycache__
 *.pyc
-sudoku-85292.zip
-sudoku-result-85292.json
+sudoku-result-*.json
+sudoku-*.zip
