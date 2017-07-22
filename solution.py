@@ -27,7 +27,7 @@ def naked_twins(values):
         # Find the naked twin box
         unit_naked_twin_boxes = []
         for unit_box in unit:
-            if len(values[unit_box]) > 2:
+            if len(values[unit_box]) != 2:
                 continue
             naked_twin_boxes = [targetUnitBox for targetUnitBox in unit if values[unit_box] == values[targetUnitBox]]
 
