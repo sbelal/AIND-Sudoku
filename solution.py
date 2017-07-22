@@ -36,6 +36,7 @@ def naked_twins(values):
                 if(naked_twin_boxes not in unit_naked_twin_boxes):
                     unit_naked_twin_boxes.append(naked_twin_boxes)
 
+
         if len(unit_naked_twin_boxes) > 0: #if there are twins found in this unit
             for naked_twin_boxes in unit_naked_twin_boxes:
                 naked_twin_value = values[naked_twin_boxes[0]]
